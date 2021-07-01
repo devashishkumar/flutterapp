@@ -12,7 +12,7 @@ class HomePage extends StatelessWidget {
     // return Container();
     int days = 45;
     double doubleVal = 40;
-    String by = 'Ashish K';
+    String by = 'Ashish Kumar';
     return Scaffold(
       appBar: AppBar(
         title: Text("Flutter App")
