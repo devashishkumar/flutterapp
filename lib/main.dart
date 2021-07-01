@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:practiceapp/homepage.dart';
+import 'package:practiceapp/pages/homepage.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,12 +11,22 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // return Container();
+    getData();
     return MaterialApp(
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+      // theme: ThemeData(
+      //   primarySwatch: Colors.blue,
+      // ),
+      home: HomePage(),
+      themeMode: ThemeMode.dark,
+      darkTheme: ThemeData(
+          primarySwatch: Colors.deepPurple,
+          brightness: Brightness.dark,
       ),
-      home: HomePage()
     );
+  }
+
+  getData({@required int defaultValue = 10}) {
+    return defaultValue * defaultValue;
   }
 }
 
