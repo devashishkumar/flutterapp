@@ -7,14 +7,20 @@ void main() {
   runApp(LoginPage());
 }
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
+  @override
+  _LoginPageState createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  String username = "";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-            title: Text("Flutter App")
+            title: Text("")
         ),
         body: SingleChildScrollView(
       child:Column(
@@ -37,6 +43,12 @@ class LoginPage extends StatelessWidget {
             child: Column(
               children: [
                 TextFormField(
+                  onChanged: (value) {
+                    username = value;
+                    setState(() {
+
+                    });
+                  },
                   decoration: InputDecoration(
                       border: OutlineInputBorder(),
                       hintText: "Enter Username", labelText: "Username"

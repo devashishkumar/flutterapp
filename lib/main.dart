@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
       //   primarySwatch: Colors.blue,
       // ),
       // home: HomePage(),
+      debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.light,
       darkTheme: ThemeData(
           primarySwatch: Colors.deepPurple,
