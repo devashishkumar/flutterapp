@@ -3,6 +3,7 @@ import 'package:practiceapp/homepageold.dart';
 // import 'package:practiceapp/homepageold.dart';
 import 'package:practiceapp/pages/homepage.dart';
 import 'package:practiceapp/pages/loginpage.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(MyApp());
@@ -23,10 +24,13 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.light,
       darkTheme: ThemeData(
           primarySwatch: Colors.deepPurple,
-          brightness: Brightness.dark,
+          // brightness: Brightness.dark,
+        primaryTextTheme: GoogleFonts.latoTextTheme(),
+        fontFamily: GoogleFonts.lato().fontFamily
       ),
       routes: {
-        "/": (context) => HomePage(),
+        "/": (context) => LoginPage(),
+        "/home": (context) => HomePage(),
         "/login": (context) => LoginPage(),
       },
 
