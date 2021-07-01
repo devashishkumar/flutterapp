@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:practiceapp/utils/customroutes.dart';
 
 void main() {
   runApp(LoginPage());
@@ -11,7 +12,11 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
+    return Scaffold(
+        appBar: AppBar(
+            title: Text("Flutter App")
+        ),
+        body: SingleChildScrollView(
       child:Column(
         children: [
           Image.asset("assets/images/login.png", fit: BoxFit.cover),
@@ -20,7 +25,7 @@ class LoginPage extends StatelessWidget {
           ),
           Text("Login", style:
             TextStyle(
-              fontSize: 20,
+              fontSize: 24,
               fontWeight: FontWeight.bold
             ),
           ),
@@ -48,11 +53,12 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 10,
+                  height: 20,
                 ),
                 ElevatedButton(onPressed: () =>{
-
+                  Navigator.pushNamed(context, CustomRoutes.homeRoute)
                 }, child: Text("Login"),
+                  style: TextButton.styleFrom(minimumSize: Size(100, 50)),
 
                 )
               ],
@@ -60,6 +66,7 @@ class LoginPage extends StatelessWidget {
           )
         ],
       )
+    )
     );
   }
 }
