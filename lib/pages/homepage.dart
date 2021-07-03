@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:practiceapp/mywidgets/mydrawer.dart';
 
 void main() {
   runApp(HomePage());
@@ -12,17 +13,17 @@ class HomePage extends StatelessWidget {
     // return Container();
     int days = 45;
     double doubleVal = 40;
-    String by = 'Ashish Kumar';
+    String by = 'Ashish';
     return Scaffold(
       appBar: AppBar(
         title: Text("Flutter App")
       ),
           body: Center(
               child: Container(
-                  child: Text('Developed by ${by}')
+                  child: Text('Welcome to app')
               )
           ),
-      drawer: Drawer()
+      drawer: MyDrawer()
     );
   }
 }
