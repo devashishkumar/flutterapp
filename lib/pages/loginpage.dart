@@ -16,7 +16,6 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   String username = "";
-  @override
   final _formKey = GlobalKey<FormState>();
 
   /**
@@ -27,6 +26,7 @@ class _LoginPageState extends State<LoginPage> {
       Navigator.pushNamed(context, CustomRoutes.homeRoute);
     }
   }
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
