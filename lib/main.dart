@@ -14,7 +14,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // return Container();
-    getData();
     return MaterialApp(
       // theme: ThemeData(
       //   primarySwatch: Colors.blue,
@@ -37,8 +36,5 @@ class MyApp extends StatelessWidget {
     );
   }
 
-  getData({@required int defaultValue = 10}) {
-    return defaultValue * defaultValue;
-  }
 }
 

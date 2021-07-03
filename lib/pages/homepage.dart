@@ -16,7 +16,8 @@ class HomePage extends StatelessWidget {
     String by = 'Ashish';
     return Scaffold(
       appBar: AppBar(
-        title: Text("Flutter App")
+        // title: Text("Flutter App", textAlign: TextAlign.center,)
+          title: new Center(child: new Text("Flutter App", textAlign: TextAlign.center))
       ),
           body: Center(
               child: Container(
