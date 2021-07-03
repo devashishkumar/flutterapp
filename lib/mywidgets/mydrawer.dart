@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:practiceapp/utils/customroutes.dart';
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({Key? key}) : super(key: key);
@@ -54,6 +55,16 @@ class MyDrawer extends StatelessWidget {
                   color: Colors.white
               )
           ),
+          ),
+          ListTile(
+            title: Text(
+              "Logout", textScaleFactor: 1.2,
+              style: TextStyle(
+                  color: Colors.white
+              )
+          ), onTap: () => {
+            Navigator.pushNamed(context, CustomRoutes.loginRoute)
+          },
           )
         ],
       )
