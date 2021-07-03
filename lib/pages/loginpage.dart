@@ -17,12 +17,24 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   String username = "";
   @override
+  final _formKey = GlobalKey<FormState>();
+
+  /**
+   * user login and validate
+   */
+  userLogin(BuildContext context) {
+    if (_formKey.currentState != null && _formKey.currentState!.validate()) {
+      Navigator.pushNamed(context, CustomRoutes.homeRoute);
+    }
+  }
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
             title: Text("")
         ),
         body: SingleChildScrollView(
+          child:Form(
+            key: _formKey,
       child:Column(
         children: [
           Image.asset("assets/images/login.png", fit: BoxFit.cover),
@@ -53,6 +65,12 @@ class _LoginPageState extends State<LoginPage> {
                       border: OutlineInputBorder(),
                       hintText: "Enter Username", labelText: "Username"
                   ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return "Username can not be empty";
+                    }
+                    return null;
+                  },
                 ),
                 SizedBox(
                   height: 10,
@@ -63,13 +81,19 @@ class _LoginPageState extends State<LoginPage> {
                       border: OutlineInputBorder(),
                       hintText: "Enter Password", labelText: "Password"
                   ),
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return "Password can not be empty";
+                      } else if (value.length < 10) {
+                        return "Password length should be at least 10";
+                      }
+                      return null;
+                    }
                 ),
                 SizedBox(
                   height: 20,
                 ),
-                ElevatedButton(onPressed: () =>{
-                  Navigator.pushNamed(context, CustomRoutes.homeRoute)
-                }, child: Text("Login"),
+                ElevatedButton(onPressed: () => userLogin(context), child: Text("Login"),
                   style: TextButton.styleFrom(minimumSize: Size(100, 50)),
 
                 )
@@ -78,6 +102,7 @@ class _LoginPageState extends State<LoginPage> {
           )
         ],
       )
+        )
     )
     );
   }
